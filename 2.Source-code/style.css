@@ -1,0 +1,85 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  font-family: Inter, sans-serif;
+}
+
+.glow-section {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.glow-section__card {
+  width: 240px;
+  height: 350px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  margin: 14px;
+  /* Pour cacher le blob à l'extérieur de la carte */
+  overflow: hidden;
+  /* Montre le blob dans cette interstice */
+  padding: 5px;
+  /* couleur moins pleine, s'accorde mieux avec le reste */
+  background: rgb(128, 128, 128, 0.1);
+}
+
+.glow-section__top-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  height: 100%;
+  font-size: 28px;
+  background: rgb(26, 26, 26);
+  transition: background-color 0.4s ease-out;
+}
+.glow-section__top-layer-text {
+  color: #d2d2d2;
+  margin-bottom: 36px;
+}
+
+/* Facultatif */
+
+@media (pointer: fine) {
+  .glow-section__card:hover > .glow-section__top-layer {
+    background: rgb(26, 26, 26, 0.6);
+  }
+}
+.glow-section__blob {
+  filter: blur(40px);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+
+}
+.glow-section__blob--1 {
+  background: rgb(255, 255, 255, 0.8);
+  background-image: linear-gradient(90deg, rgb(237, 237, 237),rgb(236, 236, 236)),linear-gradient(135deg, rgb(163, 125, 62) 0%, rgb(163, 125, 62) 22%,rgb(149, 100, 59) 22%, rgb(149, 100, 59) 32%,rgb(134, 75, 56) 32%, rgb(134, 75, 56) 37%,rgb(120, 50, 53) 37%, rgb(120, 50, 53) 51%,rgb(105, 25, 50) 51%, rgb(105, 25, 50) 55%,rgb(91, 0, 47) 55%, rgb(91, 0, 47) 100%),linear-gradient(112.5deg, rgb(163, 125, 62) 0%, rgb(163, 125, 62) 22%,rgb(149, 100, 59) 22%, rgb(149, 100, 59) 32%,rgb(134, 75, 56) 32%, rgb(134, 75, 56) 37%,rgb(120, 50, 53) 37%, rgb(120, 50, 53) 51%,rgb(105, 25, 50) 51%, rgb(105, 25, 50) 55%,rgb(91, 0, 47) 55%, rgb(91, 0, 47) 100%),linear-gradient(90deg, rgb(163, 125, 62) 0%, rgb(163, 125, 62) 22%,rgb(149, 100, 59) 22%, rgb(149, 100, 59) 32%,rgb(134, 75, 56) 32%, rgb(134, 75, 56) 37%,rgb(120, 50, 53) 37%, rgb(120, 50, 53) 51%,rgb(105, 25, 50) 51%, rgb(105, 25, 50) 55%,rgb(91, 0, 47) 55%, rgb(91, 0, 47) 100%);  background-blend-mode:overlay, overlay, overlay, normal;
+}
+.glow-section__blob--2 {
+  background: rgb(255, 255, 255, 0.8);
+}
+.glow-section__blob--3 {
+  background-color: rgb(15, 224, 235);
+}
+
+
+/* Montre leur la couleur blanche */
+/* Montre un dégradé */
+/* Montre leur la même couleur sur plusieurs cartes */
+/* Montre plusieurs dégradés différents */
